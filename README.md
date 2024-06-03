@@ -30,6 +30,9 @@
   4. Review Screen: Interface to write and read reviews.
   5. Payment Screen: Secure payment processing widget.
 
+  ![Navigation Diagram](https://github.com/ftynfrhn/beauty_bazaar/assets/123931608/03941ed6-7cbb-4871-9a23-79c70b7d0a60)
+
+
 ## References
 1. Ojerinda et al. (2019). Mobile Based Appointment And Scheduling Management System For Makeup Artist.
 2. Airbnb User Interface Inspiration.
