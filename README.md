@@ -30,6 +30,8 @@ The primary objective of BeautyBazaar is to provide a centralised platform where
 
   ![Navigation Diagram](https://github.com/ftynfrhn/beauty_bazaar/assets/123931608/2e07f274-e08c-4525-8f31-0f7536920c59)
 
+  - activity diagram is here
+
 
 
 ## References
