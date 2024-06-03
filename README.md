@@ -5,8 +5,6 @@
   1. NUR FATIN FARHANA BINTI HAMDAN (2014226)
   2. BALQIS HAIFA BINTI M.NASER (2026210)
 
----
-
 ## Descriptions of the project
 ### Introduction
 In the modern beauty industry, finding skilled makeup artists can be challenging for both clients and professionals. BeautyBazaar is an innovative mobile application designed to connect makeup artists with clients effortlessly. Inspired by the user-friendly interface of Airbnb, BeautyBazaar aims to streamline the process of booking makeup services, enhance accessibility, and build trust within the beauty community.
@@ -30,7 +28,7 @@ The primary objective of BeautyBazaar is to provide a centralised platform where
   4. Review Screen: Interface to write and read reviews.
   5. Payment Screen: Secure payment processing widget.
 
-  ![Navigation Diagram](https://github.com/ftynfrhn/beauty_bazaar/assets/123931608/03941ed6-7cbb-4871-9a23-79c70b7d0a60)
+  ![Navigation Diagram](https://github.com/ftynfrhn/beauty_bazaar/assets/123931608/0e61b1b3-4886-42ba-8734-4cd3728ecfa2)
 
 
 ## References
