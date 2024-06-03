@@ -28,7 +28,8 @@ The primary objective of BeautyBazaar is to provide a centralised platform where
   4. Review Screen: Interface to write and read reviews.
   5. Payment Screen: Secure payment processing widget.
 
-  ![Navigation Diagram](https://github.com/ftynfrhn/beauty_bazaar/assets/123931608/0e61b1b3-4886-42ba-8734-4cd3728ecfa2)
+  ![Navigation Diagram](https://github.com/ftynfrhn/beauty_bazaar/assets/123931608/2e07f274-e08c-4525-8f31-0f7536920c59)
+
 
 
 ## References
