@@ -20,7 +20,7 @@ The primary objective of BeautyBazaar is to provide a centralized platform where
   7. Portfolio Showcase: Display makeup artists' work through a portfolio feature.
 
 ## Project Structure
-- UI and Reusable Widgets
+### UI and Reusable Widgets
   1. Home Screen: Features search bar, filter options, and a list of nearby makeup artists.
   2. Profile Screen: User information, reviews, portfolio (for artists), and booking history (for clients).
   3. Booking Screen: Calendar view to select date and time, service options, and booking confirmation.
@@ -29,7 +29,7 @@ The primary objective of BeautyBazaar is to provide a centralized platform where
 
   ![Navigation Diagram](https://github.com/ftynfrhn/beauty_bazaar/assets/123931608/2e07f274-e08c-4525-8f31-0f7536920c59)
 
-- Sequence diagram:
+### Sequence Diagram
   ![sequence diagram mobile drawio](https://github.com/ftynfrhn/beauty_bazaar/assets/123931608/54389231-4432-42ae-a143-09ff3d370988) 
 
 ## References
