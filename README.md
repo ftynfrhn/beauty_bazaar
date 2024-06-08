@@ -9,7 +9,7 @@
 ### Introduction
 In the modern beauty industry, finding skilled makeup artists can be challenging for both clients and professionals. BeautyBazaar is an innovative mobile application designed to connect makeup artists with clients effortlessly. Inspired by the user-friendly interface of Airbnb, BeautyBazaar aims to streamline the process of booking makeup services, enhance accessibility, and build trust within the beauty community.
 ### Objective
-The primary objective of BeautyBazaar is to provide a centralized platform where clients can easily find and book certified makeup artists. The app aims to simplify the booking process, ensure quality through artist verification, and offer a user-friendly experience, making it easier for clients to access professional makeup services.
+The primary objective of BeautyBazaar is to provide a centralized platform where clients can easily find and book certified makeup artists. The app aims to simplify the booking process, and offer a user-friendly experience, making it easier for clients to access professional makeup services.
 ### Features and functionalities:
   1. User Profiles: Separate profiles for makeup artists and clients.
   2. Search and Filter: Search for makeup artists based on location, availability, and type of services.
