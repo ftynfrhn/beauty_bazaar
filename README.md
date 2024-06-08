@@ -9,16 +9,15 @@
 ### Introduction
 In the modern beauty industry, finding skilled makeup artists can be challenging for both clients and professionals. BeautyBazaar is an innovative mobile application designed to connect makeup artists with clients effortlessly. Inspired by the user-friendly interface of Airbnb, BeautyBazaar aims to streamline the process of booking makeup services, enhance accessibility, and build trust within the beauty community.
 ### Objective
-The primary objective of BeautyBazaar is to provide a centralised platform where clients can easily find and book certified makeup artists. The app aims to simplify the booking process, ensure quality through artist verification, and offer a user-friendly experience to both clients and makeup professionals.
+The primary objective of BeautyBazaar is to provide a centralized platform where clients can easily find and book certified makeup artists. The app aims to simplify the booking process, ensure quality through artist verification, and offer a user-friendly experience, making it easier for clients to access professional makeup services.
 ### Features and functionalities:
   1. User Profiles: Separate profiles for makeup artists and clients.
   2. Search and Filter: Search for makeup artists based on location, availability, and type of services.
   3. Booking System: Schedule appointments with makeup artists, view available time slots, and confirm bookings.
-  4. Verification and Certification: Only certified makeup artists or those with proof of experience can register.
-  5. Reviews and Ratings: Clients can leave reviews and ratings for makeup artists.
-  6. Payment Gateway: Secure payment options within the app.
-  7. Notifications: Alerts and reminders for upcoming appointments.
-  8. Portfolio Showcase: Makeup artists can display their work through a portfolio feature.
+  4. Reviews and Ratings: Clients can leave reviews and ratings for makeup artists.
+  5. Payment Gateway: Secure payment options within the app.
+  6. Notifications: Alerts and reminders for upcoming appointments.
+  7. Portfolio Showcase: Display makeup artists' work through a portfolio feature.
 
 ## Project Structure
 - UI and Reusable Widgets
@@ -30,9 +29,8 @@ The primary objective of BeautyBazaar is to provide a centralised platform where
 
   ![Navigation Diagram](https://github.com/ftynfrhn/beauty_bazaar/assets/123931608/2e07f274-e08c-4525-8f31-0f7536920c59)
 
-  - activity diagram is here
-
-
+- Sequence diagram:
+  ![sequence diagram mobile drawio](https://github.com/ftynfrhn/beauty_bazaar/assets/123931608/54389231-4432-42ae-a143-09ff3d370988) 
 
 ## References
 1. Ojerinda et al. (2019). Mobile Based Appointment And Scheduling Management System For Makeup Artist.
