@@ -32,6 +32,15 @@ The primary objective of BeautyBazaar is to provide a centralized platform where
 ### Sequence Diagram
   ![sequence diagram mobile drawio](https://github.com/ftynfrhn/beauty_bazaar/assets/123931608/54389231-4432-42ae-a143-09ff3d370988) 
 
+## Task Distribution
+1. Login screen - Fatin Farhana
+2. Home screen - Balqis Haifa
+3. User profile screen - Fatin Farhana
+4. Artist profile screen - Balqis Haifa
+5. Review screen - Balqis Haifa
+6. Booking screen - Fatin Farhana
+7. Payment screen - Balqis Haifa, Fatin Farhana
+
 ## References
 1. Ojerinda et al. (2019). Mobile Based Appointment And Scheduling Management System For Makeup Artist.
 2. Airbnb User Interface Inspiration.
