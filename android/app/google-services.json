@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "89864931747",
+    "project_id": "beautybazaar-835fd",
+    "storage_bucket": "beautybazaar-835fd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:89864931747:android:258a5ea7f398cd296bb216",
+        "android_client_info": {
+          "package_name": "com.example.beauty_bazaar"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEauufbCIOcMAZviBp2dNBNdMYQp8YIC0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
