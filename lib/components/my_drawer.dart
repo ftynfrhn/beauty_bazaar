@@ -1,8 +1,13 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({Key? key});
 
+  void logout(){
+    FirebaseAuth.instance.signOut();
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -48,29 +53,32 @@ class MyDrawer extends StatelessWidget {
                 ),
                 title: const Text("P R O F I L E"),
                 onTap: () {
-                  // this is already the home screen, so just the drawer
+                  // pop drawer
                   Navigator.pop(context);
+
+                  // navigate to profile page
+                  Navigator.pushNamed(context, '/profile_page');
                 },
               ),
             ),
 
             // users tile
-            Padding(
-              padding: const EdgeInsets.only(left: 25.0),
-              child: ListTile(
-                leading: Icon(
-                  Icons.group,
-                  color: Theme.of(context).colorScheme.inversePrimary,
-                ),
-                title: const Text("U S E R S"),
-                onTap: () {
-                  // this is already the home screen, so just the drawer
-                  Navigator.pop(context);
-                },
-              ),
-            ),
+            // Padding(
+            //   padding: const EdgeInsets.only(left: 25.0),
+            //   child: ListTile(
+            //     leading: Icon(
+            //       Icons.group,
+            //       color: Theme.of(context).colorScheme.inversePrimary,
+            //     ),
+            //     title: const Text("U S E R S"),
+            //     onTap: () {
+            //       // pop drawer
+            //       Navigator.pop(context);
+            //     },
+            //   ),
+            // ),
           ],
-          ),
+        ),
 
           // logout tile
           Padding(
@@ -82,8 +90,11 @@ class MyDrawer extends StatelessWidget {
               ),
               title: const Text("L O G O U T"),
               onTap: () {
-                // this is already the home screen, so just the drawer
+                // pop drawer
                 Navigator.pop(context);
+
+                // logout
+                logout();
               },
             ),
           ),

@@ -3,6 +3,8 @@ import 'package:beauty_bazaar/pages/home_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+// if user signed in, show home page, else show login or register page
+// use stream to listen to authentication
 class AuthPage extends StatelessWidget {
   const AuthPage({super.key});
 
