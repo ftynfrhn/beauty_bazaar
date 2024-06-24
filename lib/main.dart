@@ -1,6 +1,7 @@
-import 'package:beauty_bazaar/auth/auth.dart';
-import 'package:beauty_bazaar/auth/login_or_register.dart';
+import 'package:beauty_bazaar/services/auth/auth.dart';
+import 'package:beauty_bazaar/services/auth/login_or_register.dart';
 import 'package:beauty_bazaar/firebase_options.dart';
+import 'package:beauty_bazaar/pages/booking_page.dart';
 import 'package:beauty_bazaar/pages/home_page.dart';
 import 'package:beauty_bazaar/pages/profile_page.dart';
 import 'package:beauty_bazaar/theme/default_mode.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      //home: BookingPage(),
       home: const AuthPage(), // firstly listen if we already signed in or not
       theme: defaultMode,
       routes: {
