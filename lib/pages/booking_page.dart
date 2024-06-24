@@ -7,7 +7,10 @@ import 'package:beauty_bazaar/pages/payment_page.dart';
 import 'package:flutter/material.dart';
 
 class BookingPage extends StatefulWidget {
-  BookingPage({Key? key});
+  final Map<String, dynamic> artist;
+
+  const BookingPage({super.key, required this.artist});
+
 
   @override
   State<BookingPage> createState() => _BookingPageState();
@@ -74,12 +77,12 @@ class _BookingPageState extends State<BookingPage> {
 
             const SizedBox(height: 15),
 
-            // Artist name
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
+            // Artist name from widget.artist
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Text(
-                "Makeup Artist: Diana Akma",
-                style: TextStyle(
+                "Makeup Artist: ${widget.artist['name']}",
+                style: const TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                 ),
@@ -88,20 +91,20 @@ class _BookingPageState extends State<BookingPage> {
 
             const SizedBox(height: 10),
 
-            // Price and total after taxes
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
+            // Price and total after taxes, use widget.artist['price']
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "RM 350",
-                    style: TextStyle(
+                    "RM ${widget.artist['price']}",
+                    style: const TextStyle(
                       fontSize: 50,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Text(
+                  const Text(
                     "Total after taxes",
                     style: TextStyle(
                       fontSize: 16,
