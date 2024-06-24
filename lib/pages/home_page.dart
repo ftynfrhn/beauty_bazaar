@@ -26,6 +26,16 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => BookingPage()),
+          );
+        },
+        child: Icon(Icons.book),
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+      ),
     );
   }
 }
@@ -174,16 +184,6 @@ class NearbyArtistsList extends StatelessWidget {
           },
         );
       },
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => BookingPage()),
-          );
-        },
-        child: Icon(Icons.book),
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-      ),
     );
   }
 }
