@@ -234,10 +234,10 @@ class _BookingPageState extends State<BookingPage> {
                   onTap: () {
                     // createBookingDocument(currentUser);
 
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(builder: (context) => const PaymentPage()),
-                    // );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const PaymentPage()),
+                    );
                   },
                 ),
               ),

@@ -1,124 +1,141 @@
-// import 'package:beauty_bazaar/components/my_back_button.dart';
-// import 'package:beauty_bazaar/components/my_button.dart';
-// import 'package:flutter/material.dart';
-// import 'package:flutter_credit_card/flutter_credit_card.dart';
+import 'package:beauty_bazaar/components/my_back_button.dart';
+import 'package:beauty_bazaar/components/my_button.dart';
+import 'package:beauty_bazaar/pages/receipt_page.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_credit_card/flutter_credit_card.dart';
 
-// class PaymentPage extends StatefulWidget {
-//   const PaymentPage({super.key});
+class PaymentPage extends StatefulWidget {
+  const PaymentPage({super.key});
 
-//   @override
-//   State<PaymentPage> createState() => _PaymentPageState();
-// }
+  @override
+  State<PaymentPage> createState() => _PaymentPageState();
+}
 
-// class _PaymentPageState extends State<PaymentPage> {
-//   GlobalKey<FormState> formKey = GlobalKey<FormState>();
-//   String cardNumber = "";
-//   String expiryDate = "";
-//   String cardHolderName = "";
-//   String cvvCode = "";
-//   bool isCvvFocused = false;
+class _PaymentPageState extends State<PaymentPage> {
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  String cardNumber = "";
+  String expiryDate = "";
+  String cardHolderName = "";
+  String cvvCode = "";
+  bool isCvvFocused = false;
 
-//   // user wants to pay
-//   // void userTappedPay() {
-//   //   if (formKey.currentState!.validate()) {
-//   //     // only show dialog if form is valid
-//   //     showAboutDialog(
-//   //       context: context,
-//   //       builder: (context) => AlertDialog(
-//   //         title: const Text("Confirm Payment"),
-//   //         content: SingleChildScrollView(
-//   //           child: ListBody(
-//   //             children: const [
-//   //               Text("Card Number: " $cardNumber),
-//   //               Text("Expiry Date: " $expiryDate),
-//   //               Text("Card Holder Name: ") $cardHolderName),
-//   //               Text("CVV: " $cvvCode),
-//   //             ],
-//   //           ),
-//   //         ),
-//   //         actions: [
-//   //           // confirm button
-//   //           TextButton(
-//   //             onPressed: () => Navigator.push(
-//   //               context,
-//   //               MaterialPageRoute(
-//   //                 builder: (context) => ReceiptPage(),
-//   //               ),
-//   //             child: const Text("Confirm"),
-//   //             ),
-//   //           ),
-//   //         ],
-//   //       ),
-//   //     );
-//   //   }
-//   }
+  // user wants to pay
+  void userTappedPay() {
+    if (formKey.currentState!.validate()) {
+      // only show dialog if form is valid
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: const Text("Confirm Payment"),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: [
+                Text("Card Number: $cardNumber"),
+                Text("Expiry Date: $expiryDate"),
+                Text("Card Holder Name: $cardHolderName"),
+                Text("CVV: $cvvCode"),
+              ],
+            ),
+          ),
+          actions: [
+            // cancel button
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text(
+                "Cancel",
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.inversePrimary,
+                ),
+              ),
+            ),
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: Theme.of(context).colorScheme.surface,
-//       body:  Padding(
-//         padding: const EdgeInsets.only(top: 40.0, left: 25.0, right: 25.0),
-//         child: Column(
-//           crossAxisAlignment: CrossAxisAlignment.start,
-//           children: [
-//             // Back button row
-//             const Row(
-//               children: const [
-//                 MyBackButton(),
-//               ],
-//             ),
+            // confirm button
+            TextButton(
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ReceiptPage(),
+                ),
+              ),
+              child: Text(
+                "Confirm",
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.inversePrimary,
+                ),
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+  }
 
-//             const SizedBox(height: 10),
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.surface,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 40.0, left: 25.0, right: 25.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Back button row
+              const Row(
+                children: [
+                  MyBackButton(),
+                ],
+              ),
 
-//             // Centered page name
-//             const Center(
-//               child: Text(
-//                 "Checkout",
-//                 style: TextStyle(
-//                   fontSize: 24,
-//                   fontWeight: FontWeight.bold,
-//                 ),
-//               ),
-//             ),
-//             // credit card packages (flutter pub add flutter_credit_card)
-//             CreditCardWidget(
-//               cardNumber: cardNumber, 
-//               expiryDate: expiryDate, 
-//               cardHolderName: cardHolderName, 
-//               cvvCode: cvvCode, 
-//               showBackView: isCvvFocused, 
-//               onCreditCardWidgetChange: (p0) {},
-//             ),
+              const SizedBox(height: 10),
 
-//             // credit card form
-//             CreditCardForm(
-//               cardNumber: cardNumber, 
-//               expiryDate: expiryDate, 
-//               cardHolderName: cardHolderName, 
-//               cvvCode: cvvCode, 
-//               onCreditCardModelChange: (data) {
-//                 setState(() {
-//                   cardNumber = data.cardNumber;
-//                   expiryDate = data.expiryDate;
-//                   cardHolderName = data.cardHolderName;
-//                   cvvCode = data.cvvCode;
-//                 });
-//               }, 
-//               formKey: formKey
-//             ),
+              // Centered page name
+              const Center(
+                child: Text(
+                  "Checkout",
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              // credit card packages (flutter pub add flutter_credit_card)
+              CreditCardWidget(
+                cardNumber: cardNumber,
+                expiryDate: expiryDate,
+                cardHolderName: cardHolderName,
+                cvvCode: cvvCode,
+                showBackView: isCvvFocused,
+                onCreditCardWidgetChange: (p0) {},
+              ),
 
-//             const Spacer(),
+              // credit card form
+              CreditCardForm(
+                cardNumber: cardNumber,
+                expiryDate: expiryDate,
+                cardHolderName: cardHolderName,
+                cvvCode: cvvCode,
+                onCreditCardModelChange: (data) {
+                  setState(() {
+                    cardNumber = data.cardNumber;
+                    expiryDate = data.expiryDate;
+                    cardHolderName = data.cardHolderName;
+                    cvvCode = data.cvvCode;
+                  });
+                },
+                formKey: formKey,
+              ),
 
-//             // MyButton(
-//             //   onTap: userTappedPay,
-//             //   text: "Pay Now",
-//             // ),
+              const SizedBox(height: 100),
 
-//             const SizedBox(height: 25),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
+              MyButton(
+                onTap: userTappedPay,
+                text: "Pay Now",
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
