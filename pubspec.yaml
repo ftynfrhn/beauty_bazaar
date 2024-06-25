@@ -69,6 +69,27 @@ flutter:
     - lib/images/diana.jpeg
     - lib/images/ridz.jpeg
     - lib/images/att.png
+    - lib/images/am.jpg
+    - lib/images/amp.jpg
+    - lib/images/bl.jpg
+    - lib/images/dol.jpg
+    - lib/images/jane.jpg
+    - lib/images/jp.jpg
+    - lib/images/jt.jpg
+    - lib/images/mn.jpg
+    - lib/images/nh.jpg
+    - lib/images/nmm.jpg
+    - lib/images/ol.jpg
+    - lib/images/pk.jpg
+    - lib/images/rr.jpg
+    - lib/images/rs.jpg
+    - lib/images/sf.jpg
+    - lib/images/su.jpg
+    - lib/images/suraji.jpg
+    - lib/images/yacup.jpg
+    - lib/images/yj.jpg
+    - lib/images/zi.jpg
+
 
   #   - images/a_dot_ham.jpeg
 

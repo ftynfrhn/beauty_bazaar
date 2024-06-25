@@ -4,12 +4,12 @@ import 'package:beauty_bazaar/pages/booking_page.dart';
 class ArtistProfile extends StatelessWidget {
   final Map<String, dynamic> artist;
 
-  const ArtistProfile({Key? key, required this.artist}) : super(key: key);
+  const ArtistProfile({super.key, required this.artist});
 
   @override
   Widget build(BuildContext context) {
     double rating = artist['rating'] ?? 0.0; // Default to 0.0 if rating is not provided
-    int reviewsCount = artist['reviewsCount'] ?? 0; // Default to 0 if reviews count is not provided
+    int reviewsCount = artist['reviews'] ?? 0; // Default to 0 if reviews count is not provided
 
     return Scaffold(
       appBar: AppBar(
@@ -71,31 +71,6 @@ class ArtistProfile extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Icon(
-                  Icons.star,
-                  color: Colors.amber,
-                  size: 24,
-                ),
-                Text(
-                  rating.toStringAsFixed(1), // Display rating with one decimal place
-                  style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(width: 4.0),
-                Text(
-                  '($reviewsCount Reviews)',
-                  style: const TextStyle(
-                    fontSize: 16,
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 16.0),
             Container(
               width: double.infinity,
               alignment: Alignment.center,
@@ -119,6 +94,39 @@ class ArtistProfile extends StatelessWidget {
                   ),
                 ),
               ),
+            ),
+            const SizedBox(height: 16.0),
+            const Text(
+              '',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 8.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Icon(
+                  Icons.star,
+                  color: Colors.amber,
+                  size: 24,
+                ),
+                Text(
+                  rating.toStringAsFixed(1), // Display rating with one decimal place
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(width: 4.0),
+                Text(
+                  '($reviewsCount Reviews)',
+                  style: const TextStyle(
+                    fontSize: 16,
+                  ),
+                ),
+              ],
             ),
           ],
         ),
