@@ -3,6 +3,7 @@ import 'package:beauty_bazaar/components/my_textbox.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:beauty_bazaar/pages/booking_history.dart';
 
 class ProfilePage extends StatefulWidget {
   ProfilePage({super.key});

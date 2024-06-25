@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:beauty_bazaar/pages/booking_page.dart';
+import 'package:beauty_bazaar/pages/booking_page.dart';
+
 
 class ArtistProfile extends StatelessWidget {
   final Map<String, dynamic> artist;
 
-  const ArtistProfile({super.key, required this.artist});
+  const ArtistProfile({Key? key, required this.artist}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     double rating = artist['rating'] ?? 0.0; // Default to 0.0 if rating is not provided
-    int reviewsCount = artist['reviews'] ?? 0; // Default to 0 if reviews count is not provided
 
     return Scaffold(
       appBar: AppBar(
@@ -121,7 +122,7 @@ class ArtistProfile extends StatelessWidget {
                 ),
                 const SizedBox(width: 4.0),
                 Text(
-                  '($reviewsCount Reviews)',
+                  '(${artist['reviewsCount']} Reviews)',
                   style: const TextStyle(
                     fontSize: 16,
                   ),

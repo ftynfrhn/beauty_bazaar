@@ -1,28 +1,25 @@
+import 'package:flutter/material.dart';
 import 'package:beauty_bazaar/components/my_back_button.dart';
 import 'package:beauty_bazaar/components/my_button.dart';
 import 'package:beauty_bazaar/components/my_textbox.dart';
+// ignore: unused_import
 import 'package:beauty_bazaar/pages/payment_page.dart';
-// import 'package:cloud_firestore/cloud_firestore.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
 
 class BookingPage extends StatefulWidget {
   final Map<String, dynamic> artist;
 
   const BookingPage({super.key, required this.artist});
 
-
   @override
+  
   State<BookingPage> createState() => _BookingPageState();
 }
 
 class _BookingPageState extends State<BookingPage> {
-  // final User? currentUser = FirebaseAuth.instance.currentUser;
-
   DateTime _selectedDate = DateTime.now();
   TimeOfDay _selectedTime = TimeOfDay.now();
-  final String _location = ""; // Initialize location string
-  final String _contactNo = ""; // Initialize location string
+  String _location = ""; // Initialize location string
+  String _contactNo = ""; // Initialize contact number string
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
@@ -64,10 +61,7 @@ class _BookingPageState extends State<BookingPage> {
           children: [
             // Back button
             const Padding(
-              padding: EdgeInsets.only(
-                top: 40.0,
-                left: 25.0,
-              ),
+              padding: EdgeInsets.only(top: 40.0, left: 25.0),
               child: Row(
                 children: [
                   MyBackButton(),
@@ -125,7 +119,7 @@ class _BookingPageState extends State<BookingPage> {
                 borderRadius: BorderRadius.circular(20),
               ),
               width: containerWidth,
-              padding: const EdgeInsets.only(top: 10, bottom: 10),
+              padding: const EdgeInsets.symmetric(vertical: 10),
               child: Column(
                 children: [
                   const Text(
@@ -170,7 +164,7 @@ class _BookingPageState extends State<BookingPage> {
                 borderRadius: BorderRadius.circular(20),
               ),
               width: containerWidth,
-              padding: const EdgeInsets.only(top: 10, bottom: 10),
+              padding: const EdgeInsets.symmetric(vertical: 10),
               child: Column(
                 children: [
                   const Text(
@@ -211,7 +205,9 @@ class _BookingPageState extends State<BookingPage> {
               text: _location.isNotEmpty ? _location : "Enter your address",
               onPressed: () {
                 // Implement functionality to edit address if needed
-                print("Edit address button pressed");
+                setState(() {
+                  _location = ""; // Clear location field or update as needed
+                });
               },
             ),
 
@@ -221,7 +217,9 @@ class _BookingPageState extends State<BookingPage> {
               text: _contactNo.isNotEmpty ? _contactNo : "Enter your contact number",
               onPressed: () {
                 // Implement functionality to edit contact number if needed
-                print("Edit contact number button pressed");
+                setState(() {
+                  _contactNo = ""; // Clear contact number field or update as needed
+                });
               },
             ),
 
@@ -235,12 +233,11 @@ class _BookingPageState extends State<BookingPage> {
                 child: MyButton(
                   text: "BOOK NOW",
                   onTap: () {
-                    // createBookingDocument(currentUser);
-
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(builder: (context) => const PaymentPage()),
-                    // );
+                    // Navigate to payment page or perform booking action
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const PaymentPage()),
+                    );
                   },
                 ),
               ),
@@ -251,3 +248,5 @@ class _BookingPageState extends State<BookingPage> {
     );
   }
 }
+
+

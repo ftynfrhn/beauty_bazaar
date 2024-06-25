@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
         children: <Widget>[
           SizedBox(height: 16.0),
           Text(
-            'Filter Artists by Your Preferences',
+            'Filter Artists by Your Preferences:',
             style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
           ),
           Center(
