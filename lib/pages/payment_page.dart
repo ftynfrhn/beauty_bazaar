@@ -10,17 +10,7 @@ class PaymentPage extends StatefulWidget {
   @override
   State<PaymentPage> createState() => _PaymentPageState();
 }
-  @override
-  State<PaymentPage> createState() => _PaymentPageState();
-}
 
-class _PaymentPageState extends State<PaymentPage> {
-  GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  String cardNumber = "";
-  String expiryDate = "";
-  String cardHolderName = "";
-  String cvvCode = "";
-  bool isCvvFocused = false;
 class _PaymentPageState extends State<PaymentPage> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   String cardNumber = "";
