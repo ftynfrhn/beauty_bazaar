@@ -82,6 +82,16 @@ class _LoginPageState extends State<LoginPage> {
                 controller: passwordController,
               ),
 
+              const SizedBox(height: 10),
+
+              // forgot password
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text("Forgot password?"),
+                ],
+              ),
+
               const SizedBox(height: 25),
 
               // sign in button
@@ -96,11 +106,7 @@ class _LoginPageState extends State<LoginPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
-                    "Don't have an account? ",
-                    style: TextStyle(
-                    ),
-                  ),
+                  const Text("Don't have an account? "),
                   GestureDetector(
                     onTap: widget.onTap,
                     child: const Text(
