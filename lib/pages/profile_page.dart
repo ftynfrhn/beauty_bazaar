@@ -1,5 +1,6 @@
 import 'package:beauty_bazaar/components/my_back_button.dart';
 import 'package:beauty_bazaar/components/my_textbox.dart';
+import 'package:beauty_bazaar/pages/booking_history_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -168,6 +169,16 @@ class _ProfilePageState extends State<ProfilePage> {
                     const Text(
                       'My Booking History',
                       style: TextStyle(fontSize: 20),
+                    ),
+                    const SizedBox(height: 10),
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const BookingHistoryPage()),
+                        );
+                      },
+                      child: const Text("View Booking History"),
                     ),
                   ],
                 ),

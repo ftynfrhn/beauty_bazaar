@@ -47,6 +47,46 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
+  // forgot password method
+  void forgotPassword() async {
+    String email = "";
+
+    await showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text("Forgot Password"),
+        content: TextField(
+          decoration: const InputDecoration(hintText: "Enter your email"),
+          onChanged: (value) {
+            email = value;
+          },
+        ),
+        actions: [
+          // cancel button
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text("Cancel"),
+          ),
+          // reset button
+          TextButton(
+            onPressed: () async {
+              if (email.isNotEmpty) {
+                try {
+                  await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+                  Navigator.pop(context);
+                  displayMessageToUser("Password reset email sent", context);
+                } on FirebaseAuthException catch (e) {
+                  displayMessageToUser(e.code, context);
+                }
+              }
+            },
+            child: const Text("Reset"),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,11 +124,19 @@ class _LoginPageState extends State<LoginPage> {
 
               const SizedBox(height: 10),
 
-              // forgot password
-              const Row(
+              /// forgot password
+              Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text("Forgot password?"),
+                  GestureDetector(
+                    onTap: forgotPassword,
+                    child: const Text(
+                      "Forgot password?",
+                      style: TextStyle(
+                        color: Colors.blue,
+                      ),
+                    ),
+                  ),
                 ],
               ),
 
