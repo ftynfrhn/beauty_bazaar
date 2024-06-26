@@ -29,10 +29,13 @@ The primary objective of BeautyBazaar is to provide a centralized platform where
   8. Payment Screen: Includes a payment processing widget using a credit card package and creates a new collection in Cloud Firestore for each confirmed payment process.
   9. Booking Confirmation Screen: Displays details confirming payment and includes a button to navigate directly to the homepage.
 
-  ![Navigation Diagram](https://github.com/ftynfrhn/beauty_bazaar/assets/123931608/2e07f274-e08c-4525-8f31-0f7536920c59)
+  ![Navigation Diagram Eclair](https://github.com/ftynfrhn/beauty_bazaar/assets/123931608/98d9b901-69ef-464e-9c69-de58c2bfb537)
+
 
 ### Sequence Diagram
-  ![sequence diagram mobile drawio](https://github.com/ftynfrhn/beauty_bazaar/assets/123931608/54389231-4432-42ae-a143-09ff3d370988) 
+  ![sequence diagram mobile](https://github.com/ftynfrhn/beauty_bazaar/assets/123931608/9e648a8f-96a1-42d0-a00b-0db56acf84a1)
+
+
 
 ## Weekly Progress Report
 ![Weekly Progress Report Eclair_Page_1](https://github.com/ftynfrhn/beauty_bazaar/assets/123931608/52ffac83-4c22-448e-b458-f2272e5e836f)
