@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:beauty_bazaar/components/my_drawer.dart';
 import 'package:beauty_bazaar/pages/artist_profile.dart';
@@ -19,23 +17,28 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
-        title: const Text('BeautyBazaar'),
+        title: Text('BeautyBazaar', 
+          style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary),
+        ),
         backgroundColor: Theme.of(context).colorScheme.secondary,
         elevation: 0,
+        iconTheme: IconThemeData(color: Theme.of(context).colorScheme.inversePrimary),
       ),
+
       drawer: const MyDrawer(),
       body: Column(
         children: <Widget>[
-          SizedBox(height: 16.0),
-          Text(
+          const SizedBox(height: 16.0),
+          const Text(
             'Filter Artists by Your Preferences:',
             style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
           ),
           Center(
             child: Container(
               width: MediaQuery.of(context).size.width * 0.8,
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.grey),
                 borderRadius: BorderRadius.circular(10.0),

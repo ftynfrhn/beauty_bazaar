@@ -62,21 +62,8 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // logo
-              Icon(
-                Icons.person,
-                size: 80,
-                color: Theme.of(context).colorScheme.inversePrimary,
-              ),
-
-              const SizedBox(height: 25),
-
-              // app name
-              const Text(
-                "Beauty Bazaar",
-                style: TextStyle(fontSize: 24),
-              ),
-
+              Image.asset('lib/images/logo.png'),
+              
               const SizedBox(height: 50),
 
               // email textfield
@@ -95,26 +82,11 @@ class _LoginPageState extends State<LoginPage> {
                 controller: passwordController,
               ),
 
-              const SizedBox(height: 10),
-
-              // forgot password
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    "Forgot password?",
-                    style: TextStyle(
-                      color: Theme.of(context).colorScheme.inversePrimary,
-                    ),
-                  ),
-                ],
-              ),
-
               const SizedBox(height: 25),
 
               // sign in button
               MyButton(
-                text: "Login",
+                text: "LOGIN",
                 onTap: login,
               ),
 
@@ -124,10 +96,9 @@ class _LoginPageState extends State<LoginPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     "Don't have an account? ",
                     style: TextStyle(
-                      color: Theme.of(context).colorScheme.inversePrimary,
                     ),
                   ),
                   GestureDetector(

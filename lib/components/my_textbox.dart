@@ -16,7 +16,7 @@ class MyTextBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.primary,
+          color: Theme.of(context).colorScheme.secondary,
           borderRadius: BorderRadius.circular(20.0)
         ),
       padding: const EdgeInsets.only(left: 15.0, bottom: 15.0),
@@ -31,7 +31,7 @@ class MyTextBox extends StatelessWidget {
               Text(
                 sectionName, 
                 style: TextStyle(
-                  color: Colors.grey[500],
+                  color: Theme.of(context).colorScheme.inversePrimary,
                 ),
               ),
 

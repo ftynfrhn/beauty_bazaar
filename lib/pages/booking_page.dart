@@ -1,25 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:beauty_bazaar/components/my_back_button.dart';
 import 'package:beauty_bazaar/components/my_button.dart';
-import 'package:beauty_bazaar/components/my_textbox.dart';
-// ignore: unused_import
 import 'package:beauty_bazaar/pages/payment_page.dart';
 
 class BookingPage extends StatefulWidget {
   final Map<String, dynamic> artist;
 
-  const BookingPage({super.key, required this.artist});
+  const BookingPage({Key? key, required this.artist}) : super(key: key);
 
   @override
-  
   State<BookingPage> createState() => _BookingPageState();
 }
 
 class _BookingPageState extends State<BookingPage> {
   DateTime _selectedDate = DateTime.now();
   TimeOfDay _selectedTime = TimeOfDay.now();
-  String _location = ""; // Initialize location string
-  String _contactNo = ""; // Initialize contact number string
+  final TextEditingController _locationController = TextEditingController();
+  final TextEditingController _contactNoController = TextEditingController();
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
@@ -69,7 +66,7 @@ class _BookingPageState extends State<BookingPage> {
               ),
             ),
 
-            const SizedBox(height: 15),
+            const SizedBox(height: 10),
 
             // Artist name from widget.artist
             Padding(
@@ -115,7 +112,7 @@ class _BookingPageState extends State<BookingPage> {
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 20.0),
               decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).colorScheme.secondary,
                 borderRadius: BorderRadius.circular(20),
               ),
               width: containerWidth,
@@ -138,9 +135,7 @@ class _BookingPageState extends State<BookingPage> {
                         },
                         child: const Icon(Icons.calendar_today, size: 30),
                       ),
-
                       const SizedBox(width: 10),
-
                       Text(
                         "${_selectedDate.day}/${_selectedDate.month}/${_selectedDate.year}",
                         style: const TextStyle(
@@ -154,13 +149,13 @@ class _BookingPageState extends State<BookingPage> {
               ),
             ),
 
-            const SizedBox(height: 20),
+            const SizedBox(height: 10),
 
             // Time Container
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 20.0),
               decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).colorScheme.secondary,
                 borderRadius: BorderRadius.circular(20),
               ),
               width: containerWidth,
@@ -183,9 +178,7 @@ class _BookingPageState extends State<BookingPage> {
                         },
                         child: const Icon(Icons.access_time, size: 30),
                       ),
-
                       const SizedBox(width: 10),
-
                       Text(
                         _selectedTime.format(context),
                         style: const TextStyle(
@@ -199,28 +192,86 @@ class _BookingPageState extends State<BookingPage> {
               ),
             ),
 
-            // Location 
-            MyTextBox(
-              sectionName: "Location",
-              text: _location.isNotEmpty ? _location : "Enter your address",
-              onPressed: () {
-                // Implement functionality to edit address if needed
-                setState(() {
-                  _location = ""; // Clear location field or update as needed
-                });
-              },
+            const SizedBox(height: 10),
+
+            // Location Container
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 20.0),
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.secondary,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              width: containerWidth,
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: Column(
+                children: [
+                  const Text(
+                    "Location",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    child: TextField(
+                      controller: _locationController,
+                      decoration: const InputDecoration(
+                        border: InputBorder.none,
+                        enabledBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Colors.white),
+                        ),
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Colors.white),
+                        ),
+                        hintText: "Enter your address",
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ],
+              ),
             ),
 
-            // Contact Number
-            MyTextBox(
-              sectionName: "Contact No.",
-              text: _contactNo.isNotEmpty ? _contactNo : "Enter your contact number",
-              onPressed: () {
-                // Implement functionality to edit contact number if needed
-                setState(() {
-                  _contactNo = ""; // Clear contact number field or update as needed
-                });
-              },
+            const SizedBox(height: 10),
+
+            // Contact Number Container
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 20.0),
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.secondary,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              width: containerWidth,
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: Column(
+                children: [
+                  const Text(
+                    "Contact No.",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    child: TextField(
+                      controller: _contactNoController,
+                      decoration: const InputDecoration(
+                        border: InputBorder.none,
+                        enabledBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Colors.white),
+                        ),
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Colors.white),
+                        ),
+                        hintText: "Enter your contact number",
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ],
+              ),
             ),
 
             const SizedBox(height: 20),
@@ -233,10 +284,22 @@ class _BookingPageState extends State<BookingPage> {
                 child: MyButton(
                   text: "BOOK NOW",
                   onTap: () {
-                    // Navigate to payment page or perform booking action
+                    // Collect booking details
+                    final bookingDetails = {
+                      'artistName': widget.artist['name'].toString(),
+                      'price': widget.artist['price'].toString(),
+                      'date': "${_selectedDate.day}/${_selectedDate.month}/${_selectedDate.year}".toString(),
+                      'time': _selectedTime.format(context).toString(),
+                      'location': _locationController.text.toString(),
+                      'contactNo': _contactNoController.text.toString(),
+                    };
+
+                    // Navigate to payment page
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const PaymentPage()),
+                      MaterialPageRoute(
+                        builder: (context) => PaymentPage(bookingDetails: bookingDetails),
+                      ),
                     );
                   },
                 ),
@@ -248,5 +311,3 @@ class _BookingPageState extends State<BookingPage> {
     );
   }
 }
-
-

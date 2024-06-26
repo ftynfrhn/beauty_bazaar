@@ -91,20 +91,9 @@ class _RegisterPageState extends State<RegisterPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // logo
-              Icon(
-                Icons.person,
-                size: 80,
-                color: Theme.of(context).colorScheme.inversePrimary,
-              ),
-              const SizedBox(height: 25),
+              Image.asset('lib/images/logo.png'),
 
-              // app name
-              const Text(
-                "Beauty Bazaar",
-                style: TextStyle(fontSize: 24),
-              ),
-              const SizedBox(height: 50),
+              const SizedBox(height: 30),
 
               // username textfield
               MyTextField(
@@ -136,34 +125,22 @@ class _RegisterPageState extends State<RegisterPage> {
                 obscureText: true,
                 controller: confirmPwController,
               ),
-              const SizedBox(height: 10),
-
-              // forgot password
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    "Forgot password?",
-                    style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary),
-                  ),
-                ],
-              ),
               const SizedBox(height: 25),
 
               // register button
               MyButton(
-                text: "Register",
+                text: "REGISTER",
                 onTap: registerUser,
               ),
+
               const SizedBox(height: 25),
 
               // already have an account? Login here
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     "Already have an account? ",
-                    style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary),
                   ),
                   GestureDetector(
                     onTap: widget.onTap,

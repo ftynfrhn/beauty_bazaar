@@ -9,7 +9,7 @@ class MyBackButton extends StatelessWidget {
       onTap: () => Navigator.pop(context),
       child: Container(
         decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.primary,
+          color: Theme.of(context).colorScheme.secondary,
           shape: BoxShape.circle,
         ),
         padding: const EdgeInsets.all(10),

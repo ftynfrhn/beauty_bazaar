@@ -89,6 +89,7 @@ flutter:
     - lib/images/yacup.jpg
     - lib/images/yj.jpg
     - lib/images/zi.jpg
+    - lib/images/logo.png
 
 
   #   - images/a_dot_ham.jpeg

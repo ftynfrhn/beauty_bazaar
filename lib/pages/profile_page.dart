@@ -3,7 +3,6 @@ import 'package:beauty_bazaar/components/my_textbox.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:beauty_bazaar/pages/booking_history.dart';
 
 class ProfilePage extends StatefulWidget {
   ProfilePage({super.key});
@@ -53,7 +52,7 @@ class _ProfilePageState extends State<ProfilePage> {
           style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary),
           decoration: InputDecoration(
             hintText: "Enter new $field",
-            hintStyle: TextStyle(color: Colors.grey),
+            hintStyle: const TextStyle(color: Colors.grey),
           ),
           onChanged: (value) => newValue = value,
         ),
@@ -121,13 +120,14 @@ class _ProfilePageState extends State<ProfilePage> {
                   // profile picture
                   Container(
                     decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.primary,
+                      color: Theme.of(context).colorScheme.secondary,
                       borderRadius: BorderRadius.circular(24),
                     ),
                     padding: const EdgeInsets.all(10),
-                    child: const Icon(
+                    child: Icon(
                       Icons.person,
                       size: 64,
+                      color: Theme.of(context).colorScheme.inversePrimary,
                     ),
                   ),
 
@@ -151,7 +151,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                   ),
 
-                  const SizedBox(height: 50),
+                  const SizedBox(height: 40),
 
                   // user details
                   const Text(
@@ -175,7 +175,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     onPressed: () => editField(context, "bio"),
                   ),
 
-                  const SizedBox(height: 50),
+                  const SizedBox(height: 40),
 
                   // user booking history details
                   const Text(
