@@ -96,95 +96,83 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
       body: userDetails == null
-          ? const Center(
+          ? Center(
               child: CircularProgressIndicator(),
             )
-          : Center(
-              child: Column(
-                children: [
-                  // back button
-                  const Padding(
-                    padding: EdgeInsets.only(
-                      top: 40.0,
-                      left: 25.0,
+          : SingleChildScrollView(
+              child: Center(
+                child: Column(
+                  children: [
+                    // Your existing content here
+                    const Padding(
+                      padding: EdgeInsets.only(
+                        top: 40.0,
+                        left: 25.0,
+                      ),
+                      child: Row(
+                        children: [
+                          MyBackButton(),
+                        ],
+                      ),
                     ),
-                    child: Row(
-                      children: [
-                        MyBackButton(),
-                      ],
+                    const SizedBox(height: 25),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).colorScheme.secondary,
+                        borderRadius: BorderRadius.circular(24),
+                      ),
+                      padding: const EdgeInsets.all(10),
+                      child: Icon(
+                        Icons.person,
+                        size: 64,
+                        color: Theme.of(context).colorScheme.inversePrimary,
+                      ),
                     ),
-                  ),
-
-                  const SizedBox(height: 25),
-
-                  // profile picture
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.secondary,
-                      borderRadius: BorderRadius.circular(24),
+                    const SizedBox(height: 25),
+                    Text(
+                      userDetails!["username"] ?? "N/A",
+                      style: const TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                    padding: const EdgeInsets.all(10),
-                    child: Icon(
-                      Icons.person,
-                      size: 64,
-                      color: Theme.of(context).colorScheme.inversePrimary,
+                    const SizedBox(height: 10),
+                    Text(
+                      userDetails!["email"] ?? "N/A",
+                      style: TextStyle(
+                        color: Colors.grey[600],
+                      ),
                     ),
-                  ),
-
-                  const SizedBox(height: 25),
-
-                  // username
-                  Text(
-                    userDetails!["username"] ?? "N/A",
-                    style: const TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
+                    const SizedBox(height: 40),
+                    const Text(
+                      'My Details',
+                      style: TextStyle(fontSize: 20),
                     ),
-                  ),
-
-                  const SizedBox(height: 10),
-
-                  Text(
-                    userDetails!["email"] ?? "N/A",
-                    style: TextStyle(
-                      color: Colors.grey[600],
+                    const SizedBox(height: 10),
+                    MyTextBox(
+                      text: userDetails!["username"] ?? "N/A",
+                      sectionName: "username",
+                      onPressed: () => editField(context, "username"),
                     ),
-                  ),
-
-                  const SizedBox(height: 40),
-
-                  // user details
-                  const Text(
-                    'My Details',
-                    style: TextStyle(fontSize: 20),
-                  ),
-
-                  const SizedBox(height: 10),
-
-                  // email
-                  MyTextBox(
-                    text: userDetails!["email"] ?? "N/A",
-                    sectionName: "email",
-                    onPressed: () => editField(context, "email"),
-                  ),
-
-                  // bio
-                  MyTextBox(
-                    text: userDetails!["bio"] ?? "N/A",
-                    sectionName: "bio",
-                    onPressed: () => editField(context, "bio"),
-                  ),
-
-                  const SizedBox(height: 40),
-
-                  // user booking history details
-                  const Text(
-                    'My Booking History',
-                    style: TextStyle(fontSize: 20),
-                  ),
-                ],
+                    MyTextBox(
+                      text: userDetails!["email"] ?? "N/A",
+                      sectionName: "email",
+                      onPressed: () => editField(context, "email"),
+                    ),
+                    MyTextBox(
+                      text: userDetails!["bio"] ?? "N/A",
+                      sectionName: "bio",
+                      onPressed: () => editField(context, "bio"),
+                    ),
+                    const SizedBox(height: 40),
+                    const Text(
+                      'My Booking History',
+                      style: TextStyle(fontSize: 20),
+                    ),
+                  ],
+                ),
               ),
             ),
-    );
+      );
+    }
   }
-}
