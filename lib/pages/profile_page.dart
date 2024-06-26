@@ -97,14 +97,13 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
       body: userDetails == null
-          ? Center(
+          ? const Center(
               child: CircularProgressIndicator(),
             )
           : SingleChildScrollView(
               child: Center(
                 child: Column(
                   children: [
-                    // Your existing content here
                     const Padding(
                       padding: EdgeInsets.only(
                         top: 40.0,
@@ -116,7 +115,10 @@ class _ProfilePageState extends State<ProfilePage> {
                         ],
                       ),
                     ),
+
                     const SizedBox(height: 25),
+
+                    // user profile icon
                     Container(
                       decoration: BoxDecoration(
                         color: Theme.of(context).colorScheme.secondary,
@@ -129,7 +131,9 @@ class _ProfilePageState extends State<ProfilePage> {
                         color: Theme.of(context).colorScheme.inversePrimary,
                       ),
                     ),
+
                     const SizedBox(height: 25),
+
                     Text(
                       userDetails!["username"] ?? "N/A",
                       style: const TextStyle(
@@ -137,19 +141,27 @@ class _ProfilePageState extends State<ProfilePage> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
+
                     const SizedBox(height: 10),
+
                     Text(
                       userDetails!["email"] ?? "N/A",
                       style: TextStyle(
                         color: Colors.grey[600],
                       ),
                     ),
-                    const SizedBox(height: 40),
+
+                    const SizedBox(height: 25),
+
+                    // user details
                     const Text(
                       'My Details',
                       style: TextStyle(fontSize: 20),
                     ),
+
                     const SizedBox(height: 10),
+
+                    // username, email, bio
                     MyTextBox(
                       text: userDetails!["username"] ?? "N/A",
                       sectionName: "username",
@@ -165,7 +177,10 @@ class _ProfilePageState extends State<ProfilePage> {
                       sectionName: "bio",
                       onPressed: () => editField(context, "bio"),
                     ),
-                    const SizedBox(height: 40),
+
+                    const SizedBox(height: 25),
+
+                    // booking history
                     const Text(
                       'My Booking History',
                       style: TextStyle(fontSize: 20),
