@@ -85,8 +85,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               const Text(
                 "Password Recovery",
                 style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 30.0,
+                  color: Colors.black,
+                  fontSize: 20.0,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -97,8 +97,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               const Text(
                 "Please Enter Your Email",
                 style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20.0,
+                  color: Colors.black,
+                  fontSize: 15.0,
                   fontWeight: FontWeight.bold,
                 ),
               ),
