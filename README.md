@@ -27,11 +27,13 @@ In the modern beauty industry, finding skilled makeup artists can be challenging
 The primary objective of BeautyBazaar is to provide a centralized platform where clients can easily find and book certified makeup artists. The app aims to simplify the booking process, and offer a user-friendly experience, making it easier for clients to access professional makeup services.
 
 ### Features and functionalities:
-  1. User Profiles: Separate profiles for makeup artists and clients.
-  2. Filter: Filter makeup artists based on location, availability, and types of services.
-  3. Booking System: Schedule appointments with makeup artists, and confirm bookings.
-  4. Payment Gateway: Secure payment options within the app.
-  5. Booking History: Access user booking history.
+1. User Profiles:
+- Makeup Artist Profiles: Showcase portfolios, including location, availability, services offered, prices, reviews, and a booking function.
+- Client Profiles: Display user details such as name, username, email, bio, and booking history.
+2. Filter: Allow users to filter makeup artists based on location, availability, and types of services offered.
+3. Booking System: Enable users to schedule appointments with makeup artists by selecting the desired date, time, and inputting the location and contact number, with a confirmation of bookings.
+4. Payment Gateway: Provide secure payment options within the app through credit card payments, with confirmation for transactions.
+5. Booking History: Allow users to access their booking history, including details of the makeup artist, date, time, and location of past appointments.
 
 ### Packages:
   1. flutter/material.dart - Provides material design widgets and utilities for building Flutter UIs.
@@ -45,14 +47,32 @@ The primary objective of BeautyBazaar is to provide a centralized platform where
 ## Project Structure
 ### UI and Reusable Widgets
   1. Login Screen: Allows login with Firebase authentication, includes forgot password functionality, and provides features to navigate to the register page.
-  2. Register Screen: Allows user registration, implements Firebase authentication, and provides features to navigate to the login page.
+![Simulator Screenshot - iPhone 15 Pro Max - 2024-06-27 at 23 54 18](https://github.com/ftynfrhn/beauty_bazaar/assets/133851030/1b26f259-b1b3-46b2-8bf7-9775d9f8f1b1)
+
+  2.Register Screen: Allows user registration, implements Firebase authentication, and provides features to navigate to the login page.
+![Simulator Screenshot - iPhone 15 Pro Max - 2024-06-27 at 23 54 26](https://github.com/ftynfrhn/beauty_bazaar/assets/133851030/c9c2d6c5-7c8d-4202-9a4d-4a0f66305074)
+
   3. Home Screen: Features filter options and a list of nearby makeup artists, with a drawer containing links to the homepage, profile, and logout.
-  4. User Profile Screen: Displays user information with editing capabilities using Firebase for fetching and updating data, and provides access to booking history.
-  5. Booking History Screen: Displays a list of bookings made by each user, fetched from Cloud Firestore.
-  6. Artist Profile Screen: Display artist details and include a booking button.
-  7. Booking Screen: Includes calendar and clock views for selecting date and time, and fields for entering location and contact number information.
-  8. Payment Screen: Includes a payment processing widget using a credit card package and creates a new collection in Cloud Firestore for each confirmed payment process.
-  9. Booking Confirmation Screen: Displays details confirming payment and includes a button to navigate directly to the homepage.
+![Simulator Screenshot - iPhone 15 Pro Max - 2024-06-27 at 23 49 40](https://github.com/ftynfrhn/beauty_bazaar/assets/133851030/1314e6b0-1860-4988-b53b-461fe0b75497)
+
+  5. User Profile Screen: Displays user information with editing capabilities using Firebase for fetching and updating data, and provides access to booking history.
+![Simulator Screenshot - iPhone 15 Pro Max - 2024-06-27 at 23 50 28](https://github.com/ftynfrhn/beauty_bazaar/assets/133851030/bbc84b2c-9760-4995-96e1-8a8d0df46e75)
+
+  7. Booking History Screen: Displays a list of bookings made by each user, fetched from Cloud Firestore.
+ ![Simulator Screenshot - iPhone 15 Pro Max - 2024-06-27 at 23 52 25](https://github.com/ftynfrhn/beauty_bazaar/assets/133851030/3160c653-6ab6-43f6-8c9b-ab908ab5e58f)
+
+  9. Artist Profile Screen: Display artist details and include a booking button.
+![Simulator Screenshot - iPhone 15 Pro Max - 2024-06-27 at 23 52 39](https://github.com/ftynfrhn/beauty_bazaar/assets/133851030/b2560906-ae9d-4b63-b252-59f52df1e63c)
+ 
+  11. Booking Screen: Includes calendar and clock views for selecting date and time, and fields for entering location and contact number information.
+![Simulator Screenshot - iPhone 15 Pro Max - 2024-06-27 at 23 52 53](https://github.com/ftynfrhn/beauty_bazaar/assets/133851030/6eb73837-b6ed-4442-bfb0-6d1c3cc5eb2b)
+
+  13. Payment Screen: Includes a payment processing widget using a credit card package and creates a new collection in Cloud Firestore for each confirmed payment process.
+![Simulator Screenshot - iPhone 15 Pro Max - 2024-06-27 at 23 53 12](https://github.com/ftynfrhn/beauty_bazaar/assets/133851030/dcbf0e95-1efd-4c6c-9764-943bc05a773e)
+
+  15. Booking Confirmation Screen: Displays details confirming payment and includes a button to navigate directly to the homepage.
+![Simulator Screenshot - iPhone 15 Pro Max - 2024-06-27 at 23 53 52](https://github.com/ftynfrhn/beauty_bazaar/assets/133851030/224f0cfd-342d-4d82-b365-b9fa998b1708)
+
 
   ![Navigation Diagram Eclair](https://github.com/ftynfrhn/beauty_bazaar/assets/123931608/98d9b901-69ef-464e-9c69-de58c2bfb537)
 
