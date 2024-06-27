@@ -1,5 +1,6 @@
 import 'package:beauty_bazaar/components/my_button.dart';
 import 'package:beauty_bazaar/components/my_textfield.dart';
+import 'package:beauty_bazaar/pages/forgotpassword.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:beauty_bazaar/helper/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -47,43 +48,11 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
-  // forgot password method
-  void forgotPassword() async {
-    String email = "";
-
-    await showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: const Text("Forgot Password"),
-        content: TextField(
-          decoration: const InputDecoration(hintText: "Enter your email"),
-          onChanged: (value) {
-            email = value;
-          },
-        ),
-        actions: [
-          // cancel button
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text("Cancel"),
-          ),
-          // reset button
-          TextButton(
-            onPressed: () async {
-              if (email.isNotEmpty) {
-                try {
-                  await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
-                  Navigator.pop(context);
-                  displayMessageToUser("Password reset email sent", context);
-                } on FirebaseAuthException catch (e) {
-                  displayMessageToUser(e.code, context);
-                }
-              }
-            },
-            child: const Text("Reset"),
-          ),
-        ],
-      ),
+  // navigate to forgot password page
+  void forgotPassword() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => ForgotPassword()),
     );
   }
 
@@ -124,7 +93,7 @@ class _LoginPageState extends State<LoginPage> {
 
               const SizedBox(height: 10),
 
-              /// forgot password
+              // forgot password
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
