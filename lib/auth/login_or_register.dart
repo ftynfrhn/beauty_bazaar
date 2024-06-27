@@ -2,6 +2,8 @@ import 'package:beauty_bazaar/pages/login_page.dart';
 import 'package:beauty_bazaar/pages/register_page.dart';
 import 'package:flutter/material.dart';
 
+// manages state to display login or register page
+// stateful widget - it needs to maintain state
 class LoginOrRegister extends StatefulWidget {
   const LoginOrRegister({super.key});
 
@@ -22,6 +24,7 @@ class _LoginOrRegisterState extends State<LoginOrRegister> {
 
   @override
   Widget build(BuildContext context) {
+    // show login page if showLoginPage is true, else show register page
     if (showLoginPage) {
       return LoginPage(onTap: togglePages);
     } else {

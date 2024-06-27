@@ -5,6 +5,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+/*
+  RegisterPage
+  - user can register with email and password
+  - user can navigate to login page
+*/
 class RegisterPage extends StatefulWidget {
   final void Function()? onTap;
 

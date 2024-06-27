@@ -4,8 +4,14 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:beauty_bazaar/helper/helper_functions.dart';
 import 'package:flutter/material.dart';
 
+/*
+  LoginPage
+  - user can sign in with email and password
+  - user can reset password - password recovery
+  - user can navigate to register page
+*/
 class LoginPage extends StatefulWidget {
-  final void Function()? onTap;
+  final void Function()? onTap; // handle navigation to register page
 
   const LoginPage({super.key, required this.onTap});
 
@@ -102,6 +108,7 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              // logo
               Image.asset('lib/images/logo.png'),
               
               const SizedBox(height: 50),
