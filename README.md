@@ -64,13 +64,13 @@ The primary objective of BeautyBazaar is to provide a centralized platform where
   9. Artist Profile Screen: Display artist details and include a booking button.
 ![Simulator Screenshot - iPhone 15 Pro Max - 2024-06-27 at 23 52 39](https://github.com/ftynfrhn/beauty_bazaar/assets/133851030/b2560906-ae9d-4b63-b252-59f52df1e63c)
  
-  11. Booking Screen: Includes calendar and clock views for selecting date and time, and fields for entering location and contact number information.
+  10. Booking Screen: Includes calendar and clock views for selecting date and time, and fields for entering location and contact number information.
 ![Simulator Screenshot - iPhone 15 Pro Max - 2024-06-27 at 23 52 53](https://github.com/ftynfrhn/beauty_bazaar/assets/133851030/6eb73837-b6ed-4442-bfb0-6d1c3cc5eb2b)
 
-  13. Payment Screen: Includes a payment processing widget using a credit card package and creates a new collection in Cloud Firestore for each confirmed payment process.
+  11. Payment Screen: Includes a payment processing widget using a credit card package and creates a new collection in Cloud Firestore for each confirmed payment process.
 ![Simulator Screenshot - iPhone 15 Pro Max - 2024-06-27 at 23 53 12](https://github.com/ftynfrhn/beauty_bazaar/assets/133851030/dcbf0e95-1efd-4c6c-9764-943bc05a773e)
 
-  15. Booking Confirmation Screen: Displays details confirming payment and includes a button to navigate directly to the homepage.
+  12. Booking Confirmation Screen: Displays details confirming payment and includes a button to navigate directly to the homepage.
 ![Simulator Screenshot - iPhone 15 Pro Max - 2024-06-27 at 23 53 52](https://github.com/ftynfrhn/beauty_bazaar/assets/133851030/224f0cfd-342d-4d82-b365-b9fa998b1708)
 
 
