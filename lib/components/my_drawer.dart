@@ -1,9 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+// Custom drawer widget
 class MyDrawer extends StatelessWidget {
   const MyDrawer({Key? key});
 
+  // method to logout using Firebase Auth
   void logout(){
     FirebaseAuth.instance.signOut();
   }
@@ -78,7 +80,7 @@ class MyDrawer extends StatelessWidget {
                 // pop drawer
                 Navigator.pop(context);
 
-                // logout
+                // call logout method
                 logout();
               },
             ),

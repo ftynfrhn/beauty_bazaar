@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// Custom text box widget with edit button
 class MyTextBox extends StatelessWidget {
   final String text;
   final String sectionName;

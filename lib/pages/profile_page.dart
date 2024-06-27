@@ -5,6 +5,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+/*
+  ProfilePage
+  - user can view and edit their profile details
+  - user can view their booking history
+*/
 class ProfilePage extends StatefulWidget {
   ProfilePage({super.key});
 
@@ -16,16 +21,17 @@ class _ProfilePageState extends State<ProfilePage> {
   // current logged in user
   final User? currentUser = FirebaseAuth.instance.currentUser;
 
-  // user details map
+  // user details map to store user details fetched from firestore
   Map<String, dynamic>? userDetails;
 
+  // fetch user details on page load
   @override
   void initState() {
     super.initState();
     getUserDetails();
   }
 
-  // method to fetch user details
+  // method to fetch user details and update userDetails map
   Future<void> getUserDetails() async {
     DocumentSnapshot<Map<String, dynamic>> snapshot = await FirebaseFirestore.instance
         .collection("Users")
@@ -37,7 +43,7 @@ class _ProfilePageState extends State<ProfilePage> {
     });
   }
 
-  // edit field
+  // edit field and update in firestore and local userDetails map
   Future<void> editField(BuildContext context, String field) async {
     String newValue = "";
 
@@ -98,12 +104,13 @@ class _ProfilePageState extends State<ProfilePage> {
       backgroundColor: Theme.of(context).colorScheme.surface,
       body: userDetails == null
           ? const Center(
-              child: CircularProgressIndicator(),
+              child: CircularProgressIndicator(), // show loading circle if userDetails is null
             )
           : SingleChildScrollView(
               child: Center(
                 child: Column(
                   children: [
+                    // back button
                     const Padding(
                       padding: EdgeInsets.only(
                         top: 40.0,
@@ -134,6 +141,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
                     const SizedBox(height: 25),
 
+                    // user name and email text
                     Text(
                       userDetails!["username"] ?? "N/A",
                       style: const TextStyle(
@@ -153,7 +161,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
                     const SizedBox(height: 25),
 
-                    // user details
+                    // user details text
                     const Text(
                       'My Details',
                       style: TextStyle(fontSize: 20),

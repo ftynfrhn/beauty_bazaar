@@ -1,6 +1,7 @@
 import 'package:beauty_bazaar/components/my_button.dart';
 import 'package:flutter/material.dart';
 
+// This page is displayed when the booking is successful. It shows a message
 class BookingConfirmationPage extends StatelessWidget {
   const BookingConfirmationPage({Key? key}) : super(key: key);
 
@@ -23,6 +24,7 @@ class BookingConfirmationPage extends StatelessWidget {
 
             const SizedBox(height: 20),
 
+            // Display a green checkmark icon
             const Icon(
               Icons.check_circle_outline,
               color: Colors.green,
@@ -41,6 +43,7 @@ class BookingConfirmationPage extends StatelessWidget {
 
             const SizedBox(height: 20),
 
+            // Button to go back to the home page
             MyButton(
               text: 'Back to Home',
               onTap: () {

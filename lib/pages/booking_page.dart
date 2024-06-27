@@ -3,7 +3,14 @@ import 'package:beauty_bazaar/components/my_back_button.dart';
 import 'package:beauty_bazaar/components/my_button.dart';
 import 'package:beauty_bazaar/pages/payment_page.dart';
 
+/*
+  BookingPage
+  - user can book an artist
+  - user can select date, time, location, and contact number
+  - user can navigate to payment page
+*/
 class BookingPage extends StatefulWidget {
+  // contains artist details
   final Map<String, dynamic> artist;
 
   const BookingPage({Key? key, required this.artist}) : super(key: key);
@@ -18,6 +25,7 @@ class _BookingPageState extends State<BookingPage> {
   final TextEditingController _locationController = TextEditingController();
   final TextEditingController _contactNoController = TextEditingController();
 
+  // method to select date using date build in picker
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
       context: context,
@@ -33,6 +41,7 @@ class _BookingPageState extends State<BookingPage> {
     }
   }
 
+  // method to select time using time build in picker
   Future<void> _selectTime(BuildContext context) async {
     final TimeOfDay? picked = await showTimePicker(
       context: context,
@@ -131,7 +140,7 @@ class _BookingPageState extends State<BookingPage> {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          _selectDate(context);
+                          _selectDate(context); // call _selectDate method
                         },
                         child: const Icon(Icons.calendar_today, size: 30),
                       ),
@@ -174,7 +183,7 @@ class _BookingPageState extends State<BookingPage> {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          _selectTime(context);
+                          _selectTime(context); // call _selectTime method
                         },
                         child: const Icon(Icons.access_time, size: 30),
                       ),
@@ -294,7 +303,7 @@ class _BookingPageState extends State<BookingPage> {
                       'contactNo': _contactNoController.text.toString(),
                     };
 
-                    // Navigate to payment page
+                    // Navigate to payment page with booking details
                     Navigator.push(
                       context,
                       MaterialPageRoute(

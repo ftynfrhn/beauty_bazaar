@@ -4,9 +4,15 @@ import 'package:beauty_bazaar/pages/booking_confirmation_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_credit_card/flutter_credit_card.dart';
+import 'package:flutter_credit_card/flutter_credit_card.dart'; // package to display credit card form
 
+/*
+  PaymentPage
+  - user can enter credit card details to pay for the booking
+  - user can confirm payment
+*/
 class PaymentPage extends StatefulWidget {
+  // contains booking details
   final Map<String, String> bookingDetails;
 
   const PaymentPage({Key? key, required this.bookingDetails}) : super(key: key);
@@ -29,6 +35,7 @@ class _PaymentPageState extends State<PaymentPage> {
   // user details map
   Map<String, dynamic>? userDetails;
 
+  // fetch user details when the page loads
   @override
   void initState() {
     super.initState();
@@ -91,7 +98,7 @@ class _PaymentPageState extends State<PaymentPage> {
 
               // Check if the widget is still mounted before navigating
               if (mounted) {
-                // Navigate to the Receipt Page
+                // Navigate to the Booking Confirmation Page
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -108,6 +115,7 @@ class _PaymentPageState extends State<PaymentPage> {
   }
 }
 
+  // save to Bookings collection in Firestore
   Future<void> saveBookingDetails() async {
     try {
       await FirebaseFirestore.instance

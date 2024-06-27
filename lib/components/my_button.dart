@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// Custom button widget
 class MyButton extends StatelessWidget {
   final String text;
   final void Function() onTap;
